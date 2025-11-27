@@ -2,22 +2,27 @@
 #include <stdlib.h>
 #include <string.h>
 
-  struct student{
-         int     ID;
-         char    name[20];
-         double  grade;
+  struct point{
+         int x;
+         int y; 
          };
          
 int main(int argc, char *argv[])
 {
-    struct student stud = {10, "Hyerin", 4.3};   //변수 선언 초기화 
+    struct point p1, p2;
+    int xdiff, ydiff;
+    double dist;
     
-    stud.ID = 17;
-    strcpy(stud.name, "SS");
-    stud.grade = 2.0;
+    printf("input p1 coordinate (x,y): ");
+    scanf("%d %d", &p1.x, &p1.y);
+    printf("input p1 coordinate(x,y): ");
+    scanf("%d %d", &p2.x, &p2.y);
     
-    printf("ID : %i, name : %s, grade: %lf\n", stud.ID, stud.name, stud.grade);
-
+    //p1, p2간 거리 계산(sqrt 활용)
+    xdiff = p1.x - p2.x ;
+    ydiff = p1.y - p2.y;
+    dist = sqrt(xdiff*xdiff + ydiff*ydiff);
+    printf("distance : %lf\n", dist); 
   system("PAUSE");	
   return 0;
 }
